@@ -1,0 +1,18 @@
+[Unit]
+Description=Endless download loop to /dev/null (traffic generator)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/dl-loop/dl-loop.conf
+ExecStart=/usr/local/bin/dl-loop.sh
+User=dl-loop
+Group=dl-loop
+NoNewPrivileges=yes
+Nice=10
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

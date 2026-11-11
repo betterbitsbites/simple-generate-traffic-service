@@ -1,0 +1,20 @@
+[Unit]
+Description=Endless upload loop (traffic generator)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/ul-loop/ul-loop.conf
+ExecStart=/usr/local/bin/ul-loop.sh
+User=ul-loop
+Group=ul-loop
+# creates /var/lib/ul-loop owned by the service user, exported as $STATE_DIRECTORY
+StateDirectory=ul-loop
+NoNewPrivileges=yes
+Nice=10
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

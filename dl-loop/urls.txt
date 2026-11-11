@@ -1,0 +1,8 @@
+# /etc/dl-loop/urls.txt – one URL per line, '#' starts a comment.
+# Re-read at the start of every round; no restart needed after editing.
+# Check a URL with:  curl -sIL <url> | head -n 5
+
+https://fsn1-speed.hetzner.com/10GB.bin
+https://nbg1-speed.hetzner.com/10GB.bin
+https://hel1-speed.hetzner.com/10GB.bin
+https://proof.ovh.net/files/10Gb.dat

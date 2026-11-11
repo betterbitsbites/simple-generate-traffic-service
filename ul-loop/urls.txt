@@ -1,0 +1,25 @@
+# /etc/ul-loop/urls.txt – upload endpoints (HTTP POST), one per line.
+# '#' starts a comment. Re-read every round, no restart needed.
+# Test an endpoint:
+#   head -c 5M /dev/urandom | curl -s -o /dev/null -w '%{http_code} %{speed_upload}\n' \
+#        -X POST --data-binary @- <url>
+# Do NOT end a URL with '/' (curl -T would append the file name).
+#
+# These are free public speed-test servers – fine for testing, but please
+# don't saturate them 24/7. For continuous load use your own endpoint.
+
+# Cloudflare (anycast, nearest PoP)
+https://speed.cloudflare.com/__up
+
+# LibreSpeed public servers (from librespeed.org server list)
+https://fra.speedtest.clouvider.net/backend/empty.php
+https://speed.fs-it.systems/backend/empty.php
+https://ams.speedtest.clouvider.net/backend/empty.php
+https://lon.speedtest.clouvider.net/backend/empty.php
+https://www.librespeed.fi/backend/empty.php
+https://speedtest.cesnet.cz/backend/empty.php
+#https://librespeed.turris.cz/backend/empty.php
+#https://amsspeed.sharktech.net/backend/empty.php
+
+# Own endpoint example (nginx on a VPS, see README note):
+#https://upload.example.org/up
