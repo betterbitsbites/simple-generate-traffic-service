@@ -14,7 +14,7 @@ automatically when the container boots.
 ## Install
 
 ```bash
-git clone https://github.com/coaxx77/simple-generate-traffic-service.git
+git clone https://github.com/betterbitsbites/simple-generate-traffic-service.git
 cd simple-generate-traffic-service
 
 # download generator
